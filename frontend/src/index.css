@@ -1,0 +1,122 @@
+
+.dashboard-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.dashboard-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.date-selector {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.date-picker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+ 
+  .date-picker-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .date-picker-input {
+    padding: 8px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 180px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .date-picker-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+
+  .filter-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .filter-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .filter-button:active {
+    background-color: #003d80;
+  }
+  
+
+.chart {
+    margin: 35px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.sparkline-chart {
+    height: 250px; 
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .dashboard-title {
+        font-size: 1.5em;
+    }
+
+    .chart {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .sparkline-chart {
+        height: 100px;
+    }
+}
+
+  @media (max-width: 768px) {
+    .date-picker-input {
+      width: 150px;
+    }
+  
+    .filter-button {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+  
+
