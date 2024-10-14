@@ -62,7 +62,7 @@ const Dashboard = () => {
                     <SparklineChildren data={filteredData} />
                 </>
             ) : (
-                <p>No data available for the selected date range.</p>
+                <p>Loading......</p>
             )}
         </div>
     );

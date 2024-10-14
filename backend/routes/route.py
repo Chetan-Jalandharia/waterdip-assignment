@@ -1,23 +1,23 @@
 from fastapi import APIRouter, HTTPException, status, Body
 from bson import ObjectId,errors
-from config.db import get_db_connection
+from config.db import db_connection
 from schemas.schema import TaskSchema, UpdateTaskSchema, TaskBulkCreate
 from typing import List,Union
 from fastapi.responses import JSONResponse
 
 router = APIRouter()
 
-db = get_db_connection()
+db = db_connection()
 task_collection = db["tasks"]
 
-# Helper function to convert ObjectId to string
+# helper function to convert ObjectId to string
 def object_id_str(obj):
     obj["_id"] = str(obj["_id"])
     return obj
 
 # Create a new task/bulk tasks
 @router.post("/", response_model=Union[List[dict], dict], status_code=status.HTTP_201_CREATED)
-def create_task(task_data: Union[TaskSchema, TaskBulkCreate] = Body(...)):
+def add_task(task_data: Union[TaskSchema, TaskBulkCreate] = Body(...)):
     if isinstance(task_data, TaskSchema):
         # Handle single task creation
         task_dict = task_data.dict()
@@ -98,7 +98,7 @@ def delete_task(task_id: str):
 
 # Bulk delete tasks
 @router.delete("/", status_code=status.HTTP_204_NO_CONTENT)
-def bulk_delete_tasks(tasks: dict = Body(...)): 
+def delete_bulk(tasks: dict = Body(...)): 
     task_ids = [task['id'] for task in tasks['tasks']]  # Extract the list of IDs from the request body
 
     object_ids = []
