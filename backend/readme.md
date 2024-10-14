@@ -5,7 +5,6 @@ This is a FastAPI-based backend project for managing tasks with MongoDB as the d
 
 ## Table of Contents
 - [Project Setup](#project-setup)
-- [Environment Variables](#environment-variables)
 - [API Documentation](#api-documentation)
   - [Task Creation (Single and Bulk)](#task-creation-single-and-bulk)
   - [Task Retrieval](#task-retrieval)
